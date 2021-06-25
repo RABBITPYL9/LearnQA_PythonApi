@@ -1,6 +1,6 @@
 import requests
 
-response = requests.get("https://playground.learnqa.ru/api/long_redirect", allow_redirects=True)
+response = requests.get("https://playground.learnqa.ru/api/long_redirect", allow_redirects=True) #разрешаем редиректы
 
 more_redir = response.history #узнаем кол-во редиректов
 print(more_redir)
