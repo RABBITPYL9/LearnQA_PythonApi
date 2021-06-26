@@ -42,6 +42,7 @@ for line in list_pass:
         response2 = requests.get("https://playground.learnqa.ru/ajax/api/check_auth_cookie", cookies=cookies)
         print(response2.text)
         if response2.text == "You are authorized":
+        #if response2.text != "Wrong data": #также можно исползовать этот вариант, когда не знаем успешное сообщение при логине
             a = secret_pass.append(line)
             print(secret_pass) #выводим значение пароля
             break
