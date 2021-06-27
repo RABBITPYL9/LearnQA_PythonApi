@@ -1,6 +1,6 @@
 import requests
 import json
-
+#popitka2
 good_answer = {"success":"!"}
 
 
@@ -15,7 +15,7 @@ examples_method = ["GET", "POST", "HEAD", "PUT", "DELETE"]
 
 for i in examples_method:
     if i == "GET":
-        response = requests.get('https://playground.learnqa.ru/ajax/api/compare_query_type?method=' + examples_method[0])
+        response = requests.get('https://playground.learnqa.ru/ajax/api/compare_query_type', params={"method":"GET"})
         saved_answer = response.text
         try:
             decoded = json.loads(saved_answer)
@@ -24,7 +24,7 @@ for i in examples_method:
         except json.decoder.JSONDecodeError:
             print("запрос GET не корректный")
     elif i == "POST":
-        response1 = requests.post('https://playground.learnqa.ru/ajax/api/compare_query_type?method=' + examples_method[1])
+        response1 = requests.post('https://playground.learnqa.ru/ajax/api/compare_query_type', data={"method":"POST"})
         saved_answer1 = response1.text
         try:
             decoded1 = json.loads(saved_answer1)
@@ -33,7 +33,7 @@ for i in examples_method:
         except json.decoder.JSONDecodeError:
             print("запрос POST не корректный")
     elif i == "HEAD":
-        response2 = requests.head('https://playground.learnqa.ru/ajax/api/compare_query_type?method=' + examples_method[2])
+        response2 = requests.head('https://playground.learnqa.ru/ajax/api/compare_query_type', data={"method":"HEAD"})
         saved_answer2 = response2.text
         try:
             decoded2 = json.loads(saved_answer2)
@@ -43,7 +43,7 @@ for i in examples_method:
             print("запрос head не корректный")
 
     elif i == "PUT":
-        response3 = requests.put('https://playground.learnqa.ru/ajax/api/compare_query_type?method=' + examples_method[3])
+        response3 = requests.put('https://playground.learnqa.ru/ajax/api/compare_query_type', data={"method":"PUT"})
         saved_answer3 = response3.text
         try:
             decoded3 = json.loads(saved_answer3)
@@ -54,7 +54,7 @@ for i in examples_method:
 
 
     elif i == "DELETE":
-        response4 = requests.delete('https://playground.learnqa.ru/ajax/api/compare_query_type?method=' + examples_method[4])
+        response4 = requests.delete('https://playground.learnqa.ru/ajax/api/compare_query_type', data={"method":"DELETE"})
         saved_answer4 = response4.text
         try:
             decoded4 = json.loads(saved_answer4)
@@ -62,4 +62,3 @@ for i in examples_method:
                 print("запрос DELETE корректный")
         except json.decoder.JSONDecodeError:
             print("запрос DELETE не корректный")
-
