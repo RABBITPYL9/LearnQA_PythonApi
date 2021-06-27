@@ -3,6 +3,7 @@ import json
 
 good_answer = {"success":"!"}
 
+###В данном примере использую try, exception(зная верный ответ от сервера), хотя правильней обойтись проверкой статус кода и проверкой структуры ответа
 
 examples_method = ["GET", "POST", "HEAD", "PUT", "DELETE"]
 
