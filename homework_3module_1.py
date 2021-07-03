@@ -1,5 +1,7 @@
-import pytest
+class TestExample():
 
-enter_text = input("Введите фразу короче 15 символов: ")
+    def test_check_len(self):
 
-assert len(enter_text) < 15
+        enter_text = input("Введите фразу короче 15 символов: ")
+
+        assert len(enter_text) < 15
